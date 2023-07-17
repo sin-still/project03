@@ -1,0 +1,32 @@
+html {
+  font-size: calc(0.42vw + 2px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 5rem;
+}
+
+#wrap {
+  width: 100%;
+}
+#wrap #header {
+  width: 100%;
+  background: #000;
+}
+#wrap #header .nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#wrap #header .nav .menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+#wrap #header .nav .menu-list .depth1 {
+  font-size: 2.5rem;
+}
+#wrap #header .nav .menu-list .depth1 a {
+  color: #fff;
+}/*# sourceMappingURL=style.css.map */
