@@ -1,24 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khitan+Small+Script&display=swap');
+
 html{font-size: calc(0.42vw + 2px);}
-.container{width: 100%; max-width: 1440px; padding: 0 5rem;}
+.container{width: 100%; max-width: 1440px; padding: 0 5rem; margin: 0 auto;};
+
+$font1:'Noto Serif Khitan Small Script';
+
+title{font-family: $font1;}
+
 #wrap{
     width: 100%;
     #header{
         width: 100%;
-        background: #000;
-        .nav{
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            .menu-list{
+        padding: 4rem 0;
+        padding-bottom: 2rem;
+        background: #0e3080;
+        
+        .container{display: flex; 
+            justify-content: space-between;
+            .lang-list{
                 display: flex;
-                justify-content: space-between;
-                .depth1{
-                    font-size: 2.5rem;
+                justify-content: center;
+                >li{
+                    font-family: $font1;
+                    margin: 0 1rem;
+                    font-size: 1.5rem;
                     a{
+                        display: block;
+                        position: relative;
                         color: #fff;
+                        &::before{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            bottom: -.5rem;
+                            width: 100%;
+                            height: 1px;
+                            background: #fff;
+                            transition: 0.3s;
+                            transform: scaleX(0%);
+                        }
+                        &:hover::before{
+                            transform: scaleX(100%);
+                        }
                     }
                 }
             }
+            .header-logo{
+                display: inline-block;
+            }
+            .sns-list{
+                display: flex;
+                li{
+                    margin-right: 2rem;
+                    a{
+                        font-size: 1.8rem;
+                        color: #fff;
+                    }
+                    
+                }
+            }
+        }
+        
+        .nav{
+            .container{
+                position: relative;
+                width: 100%;
+                justify-content: space-between;
+                
+                .menu-list{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    padding-top: 3rem;
+                    .depth1{
+                        font-family: $font1;
+                        font-size: 2rem;
+                        margin-left: 3rem;
+                        >a{
+                            display: block;
+                            color: #fff;
+                            height: 100%;
+                        }
+                        .menuBg{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            .menu-txt-area{
+                                width: 30rem;
+                                height: 50rem;
+                            }
+                        }
+                    }
+                }
+            }
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            
         }
     }
     #main{
