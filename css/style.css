@@ -98,6 +98,11 @@ title {
   justify-content: center;
   width: 100%;
 }
+@media screen and (max-width: 1050px) {
+  #wrap #header .nav.nav {
+    display: none;
+  }
+}
 #wrap #header .nav .container {
   width: 100%;
   justify-content: space-between;

@@ -77,12 +77,16 @@ title{font-family: $font1;}
                 }
             }
         }
-        
         .nav{
             position: absolute;
             width: 100%;
             left: 0;
             z-index: 1;
+            
+            @media screen and (max-width:1050px) {
+                &.nav{display: none;}
+            }
+            
             .container{
                 
                 width: 100%;
@@ -214,3 +218,4 @@ title{font-family: $font1;}
 
     }
 }
+
