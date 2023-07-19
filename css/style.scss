@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khitan+Small+Script&display=swap');
-
+*{box-sizing: border-box;}
 html{font-size: calc(0.42vw + 2px);}
-.container{width: 100%; max-width: 1440px; padding: 0 5rem; margin: 0 auto;};
+.container{width: 100%; padding: 0 5rem; margin: 0 auto;};
+.bg100{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #787878;
+}
 
 $font1:'Noto Serif Khitan Small Script';
 
@@ -10,13 +17,18 @@ title{font-family: $font1;}
 #wrap{
     width: 100%;
     #header{
+        position: fixed;
         width: 100%;
-        padding: 4rem 0;
-        padding-bottom: 2rem;
+        height: 16rem;
+        padding: 4rem 5%;
+        padding-bottom: 0rem;
         background: #0e3080;
         
-        .container{display: flex; 
+        .container{
+            display: flex;
+            position: relative;
             justify-content: space-between;
+            width: 100%;
             .lang-list{
                 display: flex;
                 justify-content: center;
@@ -48,6 +60,10 @@ title{font-family: $font1;}
             }
             .header-logo{
                 display: inline-block;
+                height: 2.5rem;
+                img{
+                    height: 100%;
+                }
             }
             .sns-list{
                 display: flex;
@@ -63,8 +79,12 @@ title{font-family: $font1;}
         }
         
         .nav{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            z-index: 1;
             .container{
-                position: relative;
+                
                 width: 100%;
                 justify-content: space-between;
                 
@@ -72,26 +92,112 @@ title{font-family: $font1;}
                     display: flex;
                     justify-content: center;
                     width: 100%;
+                    height: 9rem;
                     padding-top: 3rem;
+                    align-items: center;
                     .depth1{
                         font-family: $font1;
                         font-size: 2rem;
                         margin-left: 3rem;
+                        
                         >a{
                             display: block;
                             color: #fff;
                             height: 100%;
                         }
-                        .menuBg{
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            width: 100%;
-                            .menu-txt-area{
-                                width: 30rem;
-                                height: 50rem;
+                        &.depth1-1{
+                            &:hover .menuBg{
+                                display: flex;
+                            }
+                            
+                            .menuBg{
+                                box-sizing: border-box;
+                                display: none;
+                                justify-content: center;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                background: #fff;
+                                padding: 0 5%;
+                                
+                                
+                                &::before{
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;bottom: 0;
+                                    left: 0;
+                                    background: #ddd;
+                                    z-index: 1;
+                                    width: 35.1%;
+                                    display: inline-block;
+                                }
+                                .menuInner{
+                                    display: flex;
+                                    width: 85%;
+                                    padding: 0 1rem;
+                                    .menu-txt-area{
+                                        width: 30%;
+                                        z-index: 2;
+                                        padding: 3rem 5rem 5rem 0;
+                                        h2{
+                                            font-size: 3rem;
+                                            margin-bottom: 1.5rem;
+                                        }
+                                        p{
+                                            font-size: 1.5rem;
+                                            
+                                            color: #787878;
+                                        }
+                                        .txt-more{
+                                            margin-top: 2rem;
+                                            display: inline-block;
+                                            font-size: 1.5rem;
+                                            transition: .5s;
+                                            i{
+                                                transition: .5s;
+                                                padding-left: .2rem;
+                                            }
+                                            &:hover{
+                                                color: #0e3080;
+    
+                                                
+                                            }
+                                            &:hover i{
+                                                padding: 0 .6rem ;
+                                            }
+                                        }
+                                    }
+                                    .depth2-list{
+                                        display: flex;
+                                        justify-content: start;
+                                        width: 70%;
+                                        padding: 5rem 10rem 0 10rem;
+                                        z-index: 2;
+                                        >li{
+                                            margin-right: 5rem;
+                                            padding: 1rem 0;
+                                            >a{
+                                                display: block;
+                                                margin-bottom: 2rem;
+                                            }
+                                            ul{
+                                                li{
+                                                    padding: .5rem;
+                                                    a{
+                                                        font-family: Arial, Helvetica, sans-serif;
+                                                        font-weight: 400;
+                                                        font-size: 1.7rem;
+                                                        color: #464646;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
+                        
                     }
                 }
             }
